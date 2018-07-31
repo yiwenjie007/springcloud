@@ -13,13 +13,9 @@ public class SinkReceiver {
 
     public static Logger logger = LoggerFactory.getLogger(SinkReceiver.class);
 
-
-    @StreamListener(Sink.INPUT)
-    @SendTo(SinkSender.OUT_PUT)
-    public User receive(User user){
-        logger.info("Received: " + user.getName());
-        user.setName("sendTo");
-        return user;
+    @StreamListener(SinkSender.INPUT)
+    public void receiveFromB(User user){
+        logger.info("Received from B: " + user.getName());
     }
 
     @StreamListener(SinkSender.sub)

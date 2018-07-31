@@ -31,14 +31,6 @@ public class HelloController {
         return serviceBClient.sayHelloFromB();
     }
 
-    @RequestMapping(value = "/send")
-    public void send(){
-        User user = new User();
-        user.setName("yiwenjie");
-        user.setPwd("666666");
-        sinkSender.output().send(MessageBuilder.withPayload(user).build());
-    }
-
     @RequestMapping(value = "/sendTestSub")
     public void sendTestSub(){
         User user = new User();
