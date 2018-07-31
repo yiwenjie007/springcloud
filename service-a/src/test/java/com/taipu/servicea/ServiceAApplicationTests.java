@@ -1,4 +1,4 @@
-package com.master.servicea;
+package com.taipu.servicea;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

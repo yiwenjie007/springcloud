@@ -1,4 +1,4 @@
-package com.master.servicea.model;
+package com.taipu.servicea.model;
 
 public class User {
 

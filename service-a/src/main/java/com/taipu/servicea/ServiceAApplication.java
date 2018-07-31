@@ -1,4 +1,4 @@
-package com.master.servicea;
+package com.taipu.servicea;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @EnableFeignClients
 @EnableAutoConfiguration
-@ComponentScan("com.master.*")
+@ComponentScan(value = {"com.taipu.*"})
 public class ServiceAApplication {
 
     public static void main(String[] args) {

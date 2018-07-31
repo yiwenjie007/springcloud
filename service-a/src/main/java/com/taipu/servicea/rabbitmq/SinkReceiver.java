@@ -1,12 +1,10 @@
-package com.master.servicea.rabbitmq;
+package com.taipu.servicea.rabbitmq;
 
-import com.master.servicea.model.User;
+import com.taipu.servicea.model.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.StreamListener;
-import org.springframework.cloud.stream.messaging.Sink;
-import org.springframework.messaging.handler.annotation.SendTo;
 
 @EnableBinding(value = {SinkSender.class})
 public class SinkReceiver {

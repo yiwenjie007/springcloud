@@ -1,8 +1,10 @@
-package com.master.servicea.controller;
+package com.taipu.servicea.controller;
 
-import com.master.servicea.feign.ServiceBClient;
-import com.master.servicea.model.User;
-import com.master.servicea.rabbitmq.SinkSender;
+import com.taipu.servicea.enums.RedisCacheKeyEnum;
+import com.taipu.servicea.feign.ServiceBClient;
+import com.taipu.servicea.model.User;
+import com.taipu.servicea.rabbitmq.SinkSender;
+import com.taipu.servicea.util.RedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Controller;
@@ -18,6 +20,9 @@ public class HelloController {
 
     @Autowired
     private SinkSender sinkSender;
+
+    @Autowired
+    private RedisUtil redisUtil;
 
     @RequestMapping(value = "/hello")
     @ResponseBody
@@ -37,6 +42,18 @@ public class HelloController {
         user.setName("sendTestSub");
         user.setPwd("666666");
         sinkSender.testSub().send(MessageBuilder.withPayload(user).build());
+    }
+
+    @RequestMapping(value = "/set")
+    public void setValue(){
+        redisUtil.setValue("key","yiwenjie");
+        System.out.println("设置缓存成功");
+    }
+
+    @RequestMapping(value = "/get")
+    @ResponseBody
+    public String getValue(){
+        return redisUtil.getValue("key");
     }
 
 }

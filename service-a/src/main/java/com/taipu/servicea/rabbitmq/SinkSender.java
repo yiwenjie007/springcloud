@@ -1,4 +1,4 @@
-package com.master.servicea.rabbitmq;
+package com.taipu.servicea.rabbitmq;
 
 import org.springframework.cloud.stream.annotation.Input;
 import org.springframework.cloud.stream.annotation.Output;
