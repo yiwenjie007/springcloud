@@ -2,7 +2,7 @@ package com.taipu.servicea.enums;
 
 public enum RedisCacheKeyEnum {
 
-    test("TEST" , "front_categorylist", 10 * 60, "test");
+    test("test" , "test", 10 * 60, "test");
     /**
      * 前缀
      */

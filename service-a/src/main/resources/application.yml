@@ -1,0 +1,19 @@
+spring:
+#  rabbitmq:
+#    host: 10.1.32.114
+#    port: 5672
+#    username: taipu
+#    password: taipu
+#    virtual-host: taipu
+  redis:
+    cluster:
+      password: ywj123456
+      nodes:
+         - 106.12.11.7:7000
+         - 106.12.11.7:7001
+         - 106.12.11.7:7002
+         - 106.12.11.7:7003
+         - 106.12.11.7:7004
+         - 106.12.11.7:7005
+      max-redirects: 3
+      timeout: 5

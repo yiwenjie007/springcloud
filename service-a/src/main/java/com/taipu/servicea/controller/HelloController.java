@@ -4,6 +4,7 @@ import com.taipu.servicea.enums.RedisCacheKeyEnum;
 import com.taipu.servicea.feign.ServiceBClient;
 import com.taipu.servicea.model.User;
 import com.taipu.servicea.rabbitmq.SinkSender;
+import com.taipu.servicea.util.RedisFinalUtil;
 import com.taipu.servicea.util.RedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.support.MessageBuilder;
@@ -23,6 +24,9 @@ public class HelloController {
 
     @Autowired
     private RedisUtil redisUtil;
+
+    @Autowired
+    private RedisFinalUtil redisFinalUtil;
 
     @RequestMapping(value = "/hello")
     @ResponseBody
@@ -50,10 +54,25 @@ public class HelloController {
         System.out.println("设置缓存成功");
     }
 
+    @RequestMapping(value = "/setNewValue")
+    public void setNewValue(){
+        User user = new User();
+        user.setName("redis");
+        redisFinalUtil.setValue(user,RedisCacheKeyEnum.test);
+        System.out.println("设置缓存成功");
+    }
+
     @RequestMapping(value = "/get")
     @ResponseBody
     public String getValue(){
         return redisUtil.getValue("key");
+    }
+
+    @RequestMapping(value = "/getNewValue")
+    @ResponseBody
+    public User getNewValue(){
+        User user =  redisFinalUtil.getValue(RedisCacheKeyEnum.test);
+        return user;
     }
 
 }

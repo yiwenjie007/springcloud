@@ -37,6 +37,7 @@ dependencies {
     compile 'org.springframework.boot:spring-boot-starter-data-redis:2.0.3.RELEASE'
     compile 'com.alibaba:fastjson:1.2.47'
     compile 'org.springframework.boot:spring-boot-configuration-processor:2.0.3.RELEASE'
+    compile 'org.eclipse.ecf:org.apache.log4j:1.2.15.v201012070815'
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
