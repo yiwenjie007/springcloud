@@ -1,6 +1,6 @@
 package com.master.serviceb.controller;
 
-import com.master.serviceb.model.HouseDo;
+import com.master.serviceb.model.House;
 import com.master.serviceb.service.HouseService;
 import com.master.serviceb.service.SendService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,13 +34,37 @@ public class ServiceBController {
 
     @RequestMapping(value = "selectSample",method = RequestMethod.GET)
     @ResponseBody
-    public List<HouseDo> selectSample(){
+    public List<House> selectSample(){
         return houseService.selectSample();
     }
 
     @RequestMapping(value = "select100",method = RequestMethod.GET)
     @ResponseBody
-    public List<HouseDo> select100(){
+    public List<House> select100(){
         return houseService.select100();
+    }
+
+    @RequestMapping(value = "updateById",method = RequestMethod.GET)
+    @ResponseBody
+    public void updateById(){
+        houseService.updateById();
+    }
+
+    @RequestMapping(value = "selectById",method = RequestMethod.GET)
+    @ResponseBody
+    public House selectById(){
+        return houseService.selectById();
+    }
+
+    @RequestMapping(value = "selectByIdT",method = RequestMethod.GET)
+    @ResponseBody
+    public House selectByIdT(){
+        return houseService.selectByIdT();
+    }
+
+    @RequestMapping(value = "selectByIds",method = RequestMethod.GET)
+    @ResponseBody
+    public List<House> selectByIds(){
+        return houseService.selectByIds();
     }
 }
