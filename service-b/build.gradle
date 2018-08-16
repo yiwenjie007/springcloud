@@ -33,6 +33,14 @@ dependencies {
     compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-server')
     compile('org.springframework.cloud:spring-cloud-starter-openfeign')
     compile 'org.springframework.cloud:spring-cloud-starter-stream-rabbit:2.0.1.RELEASE'
+    compile("mysql:mysql-connector-java:5.1.18")
+    compile("com.alibaba:druid:1.0.13")
+    compile 'com.ibeetl:beetlsql:2.10.32'
+    compile 'com.ibeetl:beetl-framework-starter:1.1.60.RELEASE'
+    compile 'com.zaxxer:HikariCP:3.2.0'
+    compile 'org.springframework.boot:spring-boot-devtools:2.0.4.RELEASE'
+    compile 'org.springframework.boot:spring-boot-starter-jdbc:2.0.4.RELEASE'
+    compile 'org.springframework.boot:spring-boot-starter-web:2.0.4.RELEASE'
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
